@@ -62,6 +62,16 @@ export default function Home() {
         </div>
 
         <section className="mt-24 grid grid-cols-1 sm:grid-cols-4 gap-6 w-full text-left ">
+
+            <div className="bg-white/80 border border-gray-100 rounded-2xl p-5 shadow-xl shadow-gray-100/50">
+            <div className="p-2.5 bg-purple-50 text-sky-500 rounded-xl w-fit mb-4">
+              <Globe className="size-5" />
+            </div>
+            <h4 className="font-semibold text-gray-900 text-base">Global & Local</h4>
+            <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+              Customize feeds based on regional alerts or worldwide occurrences.
+            </p>
+          </div>
           <div className="bg-white/80 border border-gray-100 rounded-2xl p-5  shadow-xl shadow-gray-100/50 ">
             <div className="p-2.5 bg-blue-50 text-blue-500 rounded-xl w-fit mb-4">
               <Zap className="size-5" />
@@ -93,15 +103,8 @@ export default function Home() {
           </div>
 
           
-          <div className="bg-white/80 border border-gray-100 rounded-2xl p-5 shadow-xl shadow-gray-100/50">
-            <div className="p-2.5 bg-purple-50 text-sky-500 rounded-xl w-fit mb-4">
-              <Globe className="size-5" />
-            </div>
-            <h4 className="font-semibold text-gray-900 text-base">Global & Local</h4>
-            <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-              Customize feeds based on regional alerts or worldwide occurrences.
-            </p>
-          </div>
+        
+
         </section>
       </main>
 
