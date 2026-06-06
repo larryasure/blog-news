@@ -1,7 +1,7 @@
 import { Loader2, LockKeyhole, User } from "lucide-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Authcontext } from "../context/Authcontext";
+import { Authcontext } from "../context/AuthContext";
 
 export default function Login() {
   const { login, loading, error, setError, success, setSuccess } =
