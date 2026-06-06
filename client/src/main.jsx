@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminProtectedRoute from "./context/AdminProtectedRoute";
-import AuthProvider from "./context/Authcontext";
+import AuthProvider from "./context/AuthContext";
 import ProtectedRoutes from "./context/ProtectedRoutes";
 import RoleProtectedRoute from "./context/RoleProtectedRoute";
 import AdminCategories from "./dashboard/admin/AdminCategories";

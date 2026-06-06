@@ -12,12 +12,13 @@ export default function Rootlayout() {
 
       <div>
         <Outlet />
+        
         <ScrollRestoration />
       </div>
 
 
       {!isDashboard && !isAdmin && <Footer />}
-      
+
     </div>
   );
 }
