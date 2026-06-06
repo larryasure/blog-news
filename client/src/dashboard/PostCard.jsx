@@ -55,8 +55,8 @@ export default function PostCard({ post, openDeleteModal, openEditModal }) {
           </div>
 
           {(user?.role === "admin" ||
-            user.role === "author" ||
-            user?.id === user?.author.id) && (
+            user?.role === "author" ||
+            user?.id === user?.author?.id) && (
             <div>
               <div className="flex sm:flex-row flex-col sm:justify-between border-t border-gray-200 text-xs text-gray-600 pt-3">
                 <button
