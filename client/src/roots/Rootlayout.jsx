@@ -9,12 +9,15 @@ export default function Rootlayout() {
   return (
     <div>
       {!isDashboard && !isAdmin && <Navbar />}
+
       <div>
         <Outlet />
         <ScrollRestoration />
       </div>
 
+
       {!isDashboard && !isAdmin && <Footer />}
+      
     </div>
   );
 }
