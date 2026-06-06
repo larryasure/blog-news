@@ -83,6 +83,8 @@ export default function AuthProvider({ children }) {
       setUser(null);
     }
   };
+
+  
   useEffect(() => {
     const initializeAuth = async () => {
       const token = localStorage.getItem("access");
