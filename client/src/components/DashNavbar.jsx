@@ -3,11 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import api from "../api/api";
 import logo from "../assets/Vector.png";
-import { Authcontext } from "../context/Authcontext";
-import AdminLayout from "../dashboard/admin/AdminLayout";
+import { AuthContext } from "../context/AuthContext";
 
 export default function DashNavbar() {
-  const { user, logout } = useContext(Authcontext);
+  const { user, logout } = useContext(AuthContext);
 
   const [categories, setCategories] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -122,7 +121,8 @@ export default function DashNavbar() {
               {isAdmin && (
                 <Link
                   className="text-gray-800 font-medium "
-                  to="/admin/dashboard">
+                  to="/admin/dashboard"
+                >
                   AdminPanel
                 </Link>
               )}

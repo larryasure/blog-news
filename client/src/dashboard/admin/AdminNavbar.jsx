@@ -1,10 +1,10 @@
 import { Bell, Search } from "lucide-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Authcontext } from "../../context/Authcontext";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function AdminNavbar() {
-  const { user } = useContext(Authcontext);
+  const { user } = useContext(AuthContext);
 
   const initials = (user?.first_name?.[0] || "") + (user?.last_name?.[0] || "");
 
@@ -13,12 +13,10 @@ export default function AdminNavbar() {
       {/* Left */}
       <div className="flex items-center gap-4 ">
         <h1 className="text-xl font-semibold text-gray-800">Admin Panel</h1>
-        <Link
-          to="/dashboard"
-          className="font-medium "
-        >User Dashboard</Link>
+        <Link to="/dashboard" className="font-medium ">
+          User Dashboard
+        </Link>
       </div>
-
 
       <div className="hidden md:flex items-center bg-gray-100 rounded-lg px-3 py-2 w-80">
         <Search className="w-4 h-4 text-gray-400" />

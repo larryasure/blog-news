@@ -11,12 +11,12 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/Vector.png";
 import logoutImage from "../../assets/logout2.jpg";
-import { Authcontext } from "../../context/Authcontext";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const {logout } = useContext(Authcontext)
+  const { logout } = useContext(AuthContext);
 
   const navClass = ({ isActive }) =>
     `flex items-center gap-4 px-4 py-2 rounded-lg font-medium transition-all duration-150
@@ -127,7 +127,8 @@ export default function AdminSidebar() {
 
               <button
                 onClick={logout}
-                className="px-5 py-1 text-red-500 hover:bg-red-100 bg-red-50 rounded-lg cursor-pointer  shadow  active:scale-110 duration-300 transition-all">
+                className="px-5 py-1 text-red-500 hover:bg-red-100 bg-red-50 rounded-lg cursor-pointer  shadow  active:scale-110 duration-300 transition-all"
+              >
                 Logout
               </button>
             </div>

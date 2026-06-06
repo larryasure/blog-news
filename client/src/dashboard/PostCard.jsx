@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Authcontext } from "../context/Authcontext";
+import { AuthContext } from "../context/AuthContext";
 import CommentPreview from "./CommentPreview";
 
 export default function PostCard({ post, openDeleteModal, openEditModal }) {
-  const { user } = useContext(Authcontext);
+  const { user } = useContext(AuthContext);
 
   const createDate = new Date(post.created_at).toLocaleDateString("en-US", {
     year: "numeric",

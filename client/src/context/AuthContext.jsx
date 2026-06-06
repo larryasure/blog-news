@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import api from "../api/api";
 
 
-export const Authcontext = createContext();
+export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -106,7 +106,7 @@ export default function AuthProvider({ children }) {
   }, []);
 
   return (
-    <Authcontext.Provider
+    <AuthContext.Provider
       value={{
         user,
         setUser,
@@ -123,6 +123,6 @@ export default function AuthProvider({ children }) {
       }}
     >
       {children}
-    </Authcontext.Provider>
+    </AuthContext.Provider>
   );
 }

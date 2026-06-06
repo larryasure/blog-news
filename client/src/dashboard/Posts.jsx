@@ -2,11 +2,11 @@ import { X } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/api";
-import { Authcontext } from "../context/Authcontext";
+import { AuthContext } from "../context/AuthContext";
 import PostCard from "./PostCard";
 
 export default function Posts() {
-  const { user } = useContext(Authcontext);
+  const { user } = useContext(AuthContext);
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -268,7 +268,11 @@ export default function Posts() {
                 {[...categories]
                   .sort((a, b) => a.name.localeCompare(b.name))
                   .map((cat) => (
-                    <option className="h-40 overflow-scroll" key={cat.id} value={cat.id}>
+                    <option
+                      className="h-40 overflow-scroll"
+                      key={cat.id}
+                      value={cat.id}
+                    >
                       {cat.name}
                     </option>
                   ))}
@@ -306,26 +310,23 @@ export default function Posts() {
                   className="py-2.5 px-3 rounded-xl flex-1 min-h-[250px] focus:outline-0 focus:outline-sky-500 transition-all duration-300 focus:ring-0 border border-sky-400 required resize-none"
                 />
               </div>
-                 <div className="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 bg-white">
-              <button
-                type="button"
-                onClick={() => setEditPost(null)}
-                className="text-sky-500 bg-sky-50 hover:bg-sky-200 font-semibold rounded-xl shadow-sm px-4 py-3 active:scale-95 duration-200 transition-all cursor-pointer text-center"
-              >
-                Cancel
-              </button>
+              <div className="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 bg-white">
+                <button
+                  type="button"
+                  onClick={() => setEditPost(null)}
+                  className="text-sky-500 bg-sky-50 hover:bg-sky-200 font-semibold rounded-xl shadow-sm px-4 py-3 active:scale-95 duration-200 transition-all cursor-pointer text-center"
+                >
+                  Cancel
+                </button>
 
-              <button
-                type="submit"
-                className="text-green-500 bg-green-50 hover:bg-green-200 font-semibold rounded-xl shadow-sm px-4 py-3 active:scale-95 duration-200 transition-all cursor-pointer text-center"
-              >
-                Save Changes
-              </button>
-            </div>
+                <button
+                  type="submit"
+                  className="text-green-500 bg-green-50 hover:bg-green-200 font-semibold rounded-xl shadow-sm px-4 py-3 active:scale-95 duration-200 transition-all cursor-pointer text-center"
+                >
+                  Save Changes
+                </button>
+              </div>
             </form>
-
-
-         
           </div>
         </div>
       )}

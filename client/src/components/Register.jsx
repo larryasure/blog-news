@@ -1,12 +1,12 @@
 import { Loader2, LockKeyhole, Mail, Phone, User, Users } from "lucide-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Authcontext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Register() {
   const navigate = useNavigate();
   const { success, register, error, setError, loading } =
-    useContext(Authcontext);
+    useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,9 +1,9 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import api from "../api/api";
-import { Authcontext } from "../context/Authcontext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function CommentPreview({ postId }) {
-  const { user } = useContext(Authcontext);
+  const { user } = useContext(AuthContext);
 
   const [comments, setComments] = useState([]);
   const [text, setText] = useState("");
@@ -54,7 +54,6 @@ export default function CommentPreview({ postId }) {
 
   return (
     <div className="mt-3p border-t border-gray-300  pt-3 space-y-3">
-
       {/* INPUT */}
       {user && (
         <div className="flex gap-2">
@@ -77,13 +76,14 @@ export default function CommentPreview({ postId }) {
 
       {/* COMMENTS */}
       <div className="space-y-2">
-        {comments.slice(0,2).map((c) => (
+        {comments.slice(0, 2).map((c) => (
           <div
             key={c.id}
             className="flex justify-between text-xs bg-gray-50 p-2 rounded-lg"
           >
             <p>
-              <span className="font-semibold capitalize">{c.user_name}</span>: {c.content}
+              <span className="font-semibold capitalize">{c.user_name}</span>:{" "}
+              {c.content}
             </p>
 
             {(user?.role === "admin" || user?.id === c.user) && (

@@ -1,11 +1,11 @@
 import { Loader2, LockKeyhole, User } from "lucide-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Authcontext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
   const { login, loading, error, setError, success, setSuccess } =
-    useContext(Authcontext);
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
